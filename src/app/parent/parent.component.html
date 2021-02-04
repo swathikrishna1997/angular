@@ -1,0 +1,5 @@
+<app-child  [name]="value1" (newNameEvent)="addName($event)"></app-child>
+
+<ul>
+    <li *ngFor="let item of names">{{item}}</li>
+  </ul>
