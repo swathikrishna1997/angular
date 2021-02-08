@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MrserviceService} from '../mrservice.service'
 
 @Component({
   selector: 'app-parent',
@@ -11,11 +12,15 @@ export class ParentComponent implements OnInit {
   num="98";
   num2=77;
   name="swathi"
+  todaydate
+  public employee:any=[]
 
   addName(newItem: string) {
     this.names.push(newItem);
   }
-  constructor() { }
+  constructor(private myservice: MrserviceService) {
+    this.todaydate = this.myservice.showTodayDate();
+   }
   foo = 'Hello';
   bar = 'World';
   changeFn(e:any) {
@@ -26,6 +31,8 @@ export class ParentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.myservice.getEmployee().subscribe(data => this.employee=data)
+    
   }
 
 }

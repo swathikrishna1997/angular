@@ -8,6 +8,8 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { DirDirective } from './dir.directive';
+import { MultiplierPipe } from './multiplier.pipe';
+import {HttpClientModule} from '@angular/common/http'
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { DirDirective } from './dir.directive';
     ParentComponent,
     ChildComponent,
     PipesComponent,
-    DirDirective
+    DirDirective,
+    MultiplierPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,3 +9,8 @@
   <p>{{foo}}</p>
   <input [ngModel]="bar" (ngModelChange)="modelChangeFn($event)">
     <p>{{ bar }}</p>
+    {{todaydate}}
+
+    <ul *ngFor="let employee of employee">
+{{employee.name}}
+    </ul>
